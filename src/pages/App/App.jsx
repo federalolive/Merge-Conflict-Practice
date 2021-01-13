@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect, Link } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
@@ -7,7 +7,6 @@ import authService from "../../services/authService";
 import Users from '../Users/Users'
 import ThingsList from '../ThingsList/ThingsList'
 import "./App.css";
-import ThingsList from '../../pages/ThingsList/ThingsList'
 
 class App extends Component {
   state = {
@@ -33,7 +32,6 @@ class App extends Component {
       {
         name: 'Ice cream',
         image: "https://i.imgur.com/Xs2bYzI.gif",
-        image: "https://i.imgur.com/aEhQik1.jpeg",
         attributes: ["Tasty", "Sweet", "Shiny"]
       },
       {
@@ -162,6 +160,8 @@ class App extends Component {
                 things={this.state.kimsThings}
             />
         }
+            />
+            <Route        
             exact path='/erinsthings'
             render={() =>
               <ThingsList 
