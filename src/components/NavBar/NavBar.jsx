@@ -11,6 +11,8 @@ const NavBar = ({ user, handleLogout }) => {
               <li className="nav-link">Welcome, {user.name}</li>
               <li><Link to="/users" className="nav-link">Users</Link></li>
               <Link to='' className='nav-link' onClick={handleLogout}>LOG OUT</Link>
+              <li><Link to={{pathname: "/jonathansthings"}}>Jonathan's Things</Link>
+              </li>
             </ul>
           </div>
         </nav>
