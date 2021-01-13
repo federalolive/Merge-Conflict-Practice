@@ -47,6 +47,23 @@ class App extends Component {
         attributes: ["Nerdy", "Time sink", "Entertaining"]
       }
     ],
+    kimsThings: [
+      {
+        name: 'cat',
+        image: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg',
+        attributes: ['soft', 'furry', 'loveable', 'fickle']
+      },
+      {
+        name: 'ice cream',
+        image: 'https://www.benjerry.com/files/live/sites/systemsite/files/flavors/products/us/pint/choc-chip-cookie-dough-detail.png',
+        attributes: ['good', 'great', 'gods food']
+      },
+      {
+        name: 'hair products',
+        image: 'https://www.naturallycurly.com/wp-content/uploads/2013/11/ethnic-aisle.jpg',
+        attributes: ['essential', 'numerous', 'expensive']
+      }
+    ],
   };
 
   
@@ -117,6 +134,14 @@ class App extends Component {
         things={this.state.jonathansThings}/>
         }
         />
+        <Route 
+          exact path='/kimsthings'
+          render={()=>
+            <ThingsList 
+                things={this.state.kimsThings}
+            />
+        }
+            />
       </>
 
     );
