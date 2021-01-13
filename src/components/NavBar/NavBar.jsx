@@ -22,6 +22,14 @@ const NavBar = ({ user, handleLogout }) => {
                 Kims Things
               </Link>
               </li>
+              <li>
+                <Link 
+                to={{
+                  pathname: '/erinsthings'
+                }}>
+                Erin's Things
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>

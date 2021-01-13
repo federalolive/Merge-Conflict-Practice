@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
@@ -62,6 +62,27 @@ class App extends Component {
         name: 'hair products',
         image: 'https://www.naturallycurly.com/wp-content/uploads/2013/11/ethnic-aisle.jpg',
         attributes: ['essential', 'numerous', 'expensive']
+      }],
+    erinThings: [
+      {
+        name: 'Circe',
+        image: 'https://picsum.photos/200/300',
+        attributes: ['black and white', 'cuddly', 'cat']
+      },
+      {
+        name: 'Nadia',
+        image: 'https://picsum.photos/200/300',
+        attributes: ['cat', 'fluffy', 'tan']
+      },
+      {
+        name: 'Casey',
+        image: 'https://picsum.photos/200/300',
+        attributes: ['dog', 'lab', 'cute']
+      },
+      {
+        name: 'Archie',
+        image: 'https://picsum.photos/200/300',
+        attributes: ['pitbull', 'dog', 'funny']
       }
     ],
   };
@@ -141,6 +162,12 @@ class App extends Component {
                 things={this.state.kimsThings}
             />
         }
+            exact path='/erinsthings'
+            render={() =>
+              <ThingsList 
+                things={this.state.erinThings}
+              />
+            }
             />
       </>
 
