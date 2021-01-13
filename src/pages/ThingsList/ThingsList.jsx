@@ -26,4 +26,4 @@ const ThingsList = (props) => {
     )
 }
 
-export default ThingsList
+export default ThingsList;
