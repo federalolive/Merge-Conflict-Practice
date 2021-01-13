@@ -1,15 +1,38 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect, Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from '../Users/Users'
+import ThingsList from '../ThingsList/ThingsList'
 import "./App.css";
 
 class App extends Component {
   state = {
     user: authService.getUser(),
+    erinThings: [
+      {
+        name: 'Circe',
+        image: 'https://picsum.photos/200/300',
+        attributes: ['black and white', 'cuddly', 'cat']
+      },
+      {
+        name: 'Nadia',
+        image: 'https://picsum.photos/200/300',
+        attributes: ['cat', 'fluffy', 'tan']
+      },
+      {
+        name: 'Casey',
+        image: 'https://picsum.photos/200/300',
+        attributes: ['dog', 'lab', 'cute']
+      },
+      {
+        name: 'Archie',
+        image: 'https://picsum.photos/200/300',
+        attributes: ['pitbull', 'dog', 'funny']
+      }
+    ],
   };
 
   handleLogout = () => {
@@ -63,6 +86,14 @@ class App extends Component {
             user ? <Users /> : <Redirect to="/login" />
           }
         />
+        <Route
+            exact path='/erinsthings'
+            render={() =>
+              <ThingsList 
+                things={this.state.erinThings}
+              />
+            }
+            />
       </>
     );
   }
