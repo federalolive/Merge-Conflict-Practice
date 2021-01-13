@@ -9,6 +9,10 @@ const NavBar = ({ user, handleLogout }) => {
           <div className="nav-wrapper">
             <ul id="nav-mobile" className="right">
               <li className="nav-link">Welcome, {user.name}</li>
+              <li><Link to={{pathname: "/ambersthings"}}>Amber's Things</Link>
+              
+
+              </li>
               <li><Link to="/users" className="nav-link">Users</Link></li>
               <Link to='' className='nav-link' onClick={handleLogout}>LOG OUT</Link>
             </ul>
