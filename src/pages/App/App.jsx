@@ -5,6 +5,7 @@ import Signup from "../Signup/Signup";
 import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from '../Users/Users'
+import ThingsList from '../ThingsList/ThingsList'
 import "./App.css";
 import ThingsList from '../../pages/ThingsList/ThingsList'
 
@@ -27,9 +28,28 @@ class App extends Component {
         image: 'https://images.squarespace-cdn.com/content/v1/511db456e4b02acb17b6379d/1439962138051-A00FCUU25NWLF5WAN0V4/ke17ZwdGBToddI8pDm48kE3MUHZ9vSBnmdfJVjOam8NZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVEzgV-mKhaEvNxa5715rBNx_md7Z42Q7QcfZOBPVOEII6QvevUbj177dmcMs1F0H-0/image-asset.png',
         attributes: ['huge', 'comfy', 'red']
       },
-    ]
-    
+    ],
+    jonathansThings: [ 
+      {
+        name: 'Ice cream',
+        image: "https://i.imgur.com/Xs2bYzI.gif",
+        image: "https://i.imgur.com/aEhQik1.jpeg",
+        attributes: ["Tasty", "Sweet", "Shiny"]
+      },
+      {
+        name: 'Guitar',
+        image: "https://i.imgur.com/oo2ilEU.jpeg",
+        attributes: ["Started and stopped many times", "Takes time", "Better than bass", "Boomer humor"]
+      },
+      {
+        name: 'Video Games',
+        image: "https://i.imgur.com/A58Q5iQ.jpeg",
+        attributes: ["Nerdy", "Time sink", "Entertaining"]
+      }
+    ],
   };
+
+  
 
   handleLogout = () => {
     authService.logout();
@@ -90,6 +110,13 @@ class App extends Component {
         />
       }
       />
+      <Route
+        exact path='/jonathansthings'
+        render={() =>
+        <ThingsList 
+        things={this.state.jonathansThings}/>
+        }
+        />
       </>
 
     );
